@@ -16,7 +16,7 @@ public class Category implements Serializable {
     private Long id;
     private String name;
 
-    @Transient
+    @ManyToMany(mappedBy = "categories") //nome da coleção onde a tabela de relacionamento está mapeada
     private Set<Product> products = new HashSet<>();
 
     public Category() {
